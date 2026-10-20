@@ -1,0 +1,6 @@
+scripts
+README.md
+package.json
+wrangler.jsonc
+.wrangler
+node_modules
