@@ -1,0 +1,11 @@
+{
+  "name": "margin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Margin, the daily news numbers game",
+  "scripts": {
+    "new": "node scripts/new-puzzle.js",
+    "check": "node scripts/validate.js",
+    "dev": "npx --yes serve@14.2.4 -l 3000 ."
+  }
+}

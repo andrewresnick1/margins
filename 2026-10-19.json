@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-19",
+  "rounds": [
+    {
+      "cat": "Polls",
+      "q": "Pew Research's early-October survey: what share of Americans approve of how Trump is handling his job?",
+      "ans": 30, "min": 0, "max": 100, "step": 1, "suffix": "%",
+      "note": "The lowest of his second term.",
+      "src": "Pew Research Center, Oct 8",
+      "url": "https://www.pewresearch.org/politics/2026/10/08/with-americans-in-a-sour-mood-democratic-voters-are-more-engaged-in-midterms/"
+    },
+    {
+      "cat": "Campaigns",
+      "q": "With 15 days to go, roughly how much money has been raised in this year's midterm elections?",
+      "ans": 15, "min": 0, "max": 40, "step": 0.5, "prefix": "$", "suffix": "B",
+      "note": "On track to be the most expensive midterms on record.",
+      "src": "NPR, Oct 19",
+      "url": "https://www.npr.org/sections/news/"
+    },
+    {
+      "cat": "Public mood",
+      "q": "AP-NORC: what share of voters want 'substantial change' or 'complete upheaval' in how the country is run?",
+      "ans": 80, "min": 0, "max": 100, "step": 1, "suffix": "%",
+      "note": "Among Republicans it was 58%.",
+      "src": "Axios on AP-NORC poll, Oct 15",
+      "url": "https://www.axios.com/2026/10/15/americas-wits-end-election-approaches"
+    },
+    {
+      "cat": "Markets",
+      "q": "India's Jio Platforms is raising about $3.2B in its IPO. How much did anchor investors bid?",
+      "ans": 25, "min": 0, "max": 60, "step": 1, "prefix": "$", "suffix": "B",
+      "note": "Nearly 30 times the reserved quota.",
+      "src": "Analytics Insight via Reuters, Oct 19",
+      "url": "https://www.analyticsinsight.net/news/jio-ipo-usd-25-billion-bids-target-usd-32-billion-offering"
+    },
+    {
+      "cat": "World",
+      "q": "China set a record for research and development spending in 2025. How much did it spend?",
+      "ans": 583, "min": 0, "max": 1500, "step": 10, "prefix": "$", "suffix": "B",
+      "note": "Up 8.2% from the year before.",
+      "src": "Interesting Engineering, Oct 17",
+      "url": "https://interestingengineering.com/innovation/china-invests-record-billion-in-science"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Margin · The Daily News Numbers Game</title>
+<meta name="description" content="Five numbers from this week's news. Slide to your guess. Your score is your margin of error. New puzzle every day.">
+<meta property="og:title" content="Margin · The Daily News Numbers Game">
+<meta property="og:description" content="Five numbers from this week's news. How close can you get?">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#152230">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="./">Mar<span>gin</span></a>
+    <div class="edition" id="edition">Loading…</div>
+  </header>
+  <p class="tag">Five numbers from this week's news. Slide to your guess. Your score is your margin of error.</p>
+  <p class="banner" id="banner" hidden></p>
+  <div class="progress" id="progress"></div>
+  <main id="stage"><section class="card"><p class="note">Loading today's numbers…</p></section></main>
+  <details class="how"><summary>How to play</summary>
+    <p>Each day has five numbers from the news: polls, money, votes, markets. Drag the slider to your guess and lock it in. You score up to 100 per round, losing points the further you land from the real number. Within about 2% of the slider's range is a bullseye. Everyone gets the same five numbers, and every answer links to the story it came from. New numbers arrive at midnight Eastern.</p>
+  </details>
+  <footer>
+    <a href="archive.html">Past puzzles</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a id="support" href="#" target="_blank" rel="noopener" hidden>Support Margin</a>
+  </footer>
+</div>
+<script src="game.js"></script>
+</body>
+</html>

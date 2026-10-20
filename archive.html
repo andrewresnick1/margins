@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Past Puzzles · Margin</title>
+<meta name="description" content="Every past edition of Margin, the daily news numbers game.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<div class="wrap prose">
+  <header><a class="logo" href="./">Mar<span>gin</span></a><div class="edition">Archive</div></header>
+  <h1>Past puzzles</h1>
+  <p class="tag">Replay any earlier edition. Archive games don't count toward your streak.</p>
+  <ul class="archive" id="list"><li class="note">Loading…</li></ul>
+  <footer><a href="./">Today's puzzle</a><a href="about.html">About</a><a href="privacy.html">Privacy</a></footer>
+</div>
+<script>
+(async function () {
+  const CFG = window.MARGIN_CONFIG;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: CFG.timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const dn = (s) => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 86400000;
+  const el = document.getElementById("list");
+  try {
+    const res = await fetch("puzzles/index.json", { cache: "no-cache" });
+    const dates = (await res.json()).filter((d) => d <= today).sort().reverse();
+    el.innerHTML = dates.map((d) => {
+      let done = false; try { const s = JSON.parse(localStorage.getItem("margin:" + d)); done = s && s.i >= 5; } catch (e) {}
+      const label = new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+      return `<li><a href="./?date=${d}"><span>No. ${dn(d) - dn(CFG.launchDate) + 1} · ${label}</span><b>${d === today ? "TODAY" : done ? "PLAYED" : "PLAY"}</b></a></li>`;
+    }).join("") || `<li class="note">No past puzzles yet.</li>`;
+  } catch (e) { el.innerHTML = `<li class="note">Couldn't load the archive.</li>`; }
+})();
+</script>
+</body>
+</html>
